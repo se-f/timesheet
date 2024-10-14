@@ -3,7 +3,6 @@ package tn.esprit.spring.entities;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.ArrayList;
@@ -16,13 +15,11 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import tn.esprit.spring.entities.Employe;
-import tn.esprit.spring.entities.Role;
 import tn.esprit.spring.services.EmployeServiceImpl; // Your implementation class
 import tn.esprit.spring.repository.EmployeRepository; // Assuming this is a dependency
 
 @ExtendWith(MockitoExtension.class) // Ensure Mockito is used
-public class EmployeTest {
+class EmployeTest {
 
     @InjectMocks
     private EmployeServiceImpl employeService; // Inject the actual implementation class
@@ -36,7 +33,7 @@ public class EmployeTest {
     }
 
     @Test
-    public void testCreateEmploye() {
+    void testCreateEmploye() {
 
         Role role = Role.valueOf("ADMINISTRATEUR");
         Employe employe = new Employe("Doe", "John", "john.doe@example.com", true, role);
@@ -50,7 +47,7 @@ public class EmployeTest {
     }
 
     @Test
-    public void testGetEmployePrenomById() {
+    void testGetEmployePrenomById() {
 
         int employeId = 1;
         Employe employe = new Employe("Doe", "John", "john.doe@example.com", true, Role.valueOf("ADMINISTRATEUR"));
@@ -65,7 +62,7 @@ public class EmployeTest {
     }
 
     @Test
-    public void testUpdateEmploye() {
+    void testUpdateEmploye() {
 
         Role role = Role.valueOf("ADMINISTRATEUR");
         Employe employe = new Employe("Doe", "John", "john.doe@example.com", true, role);
@@ -80,7 +77,7 @@ public class EmployeTest {
     }
 
     @Test
-    public void testDeleteEmployeById() {
+    void testDeleteEmployeById() {
         // Given
         int employeId = 1;
         Role role = Role.valueOf("ADMINISTRATEUR");
