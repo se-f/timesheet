@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: timesheet
-          image: seeef/timesheet
+          image: seeef/timesheet:latest
           ports:
             - containerPort: 9096
           env:
