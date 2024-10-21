@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-spring-boot-app
+  name: timesheet
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: my-spring-boot-app
+      app: timesheet
   template:
     metadata:
       labels:
-        app: my-spring-boot-app
+        app: timesheet
     spec:
       containers:
-        - name: my-spring-boot-app
-          image: my-spring-boot-app:${BUILD_NUMBER}  # Use the image built in the pipeline
+        - name: timesheet
+          image: seeef/timesheet:${BUILD_NUMBER}  # Use the image built in the pipeline
           ports:
             - containerPort: 9096
           env:
