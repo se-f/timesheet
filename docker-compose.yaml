@@ -1,6 +1,6 @@
 services:
   mysqldb:
-    container_name: mysqldb
+    container_name: mysqldb-service
     image: mysql:8
     restart: unless-stopped
     environment:
